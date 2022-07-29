@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.example.todoapp.ui.fragment.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" >
+        <action
+            android:id="@+id/registerTransition"
+            app:destination="@id/toDoRegisterFragment" />
+        <action
+            android:id="@+id/detailTransition"
+            app:destination="@id/toDoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoDetailFragment"
+        android:name="com.example.todoapp.ui.fragment.ToDoDetailFragment"
+        android:label="fragment_to_do_detail"
+        tools:layout="@layout/fragment_to_do_detail" >
+        <argument
+            android:name="task"
+            app:argType="com.example.todoapp.data.entity.Tasks" />
+    </fragment>
+    <fragment
+        android:id="@+id/toDoRegisterFragment"
+        android:name="com.example.todoapp.ui.fragment.ToDoRegisterFragment"
+        android:label="fragment_to_do_register"
+        tools:layout="@layout/fragment_to_do_register" />
+</navigation>
